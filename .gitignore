@@ -1,2 +1,9 @@
-node_modules/
+# Ignorar diretório virtualenv
+venv/
+
+# Arquivos de configuração locais
 .env
+
+# Ignorar arquivos temporários
+__pycache__/
+*.pyc
