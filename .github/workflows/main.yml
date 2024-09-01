@@ -25,6 +25,7 @@ jobs:
 
     - name: Rodar Testes
       run: |
+        pytest --version
         pytest
 
     - name: Construir Imagem Docker
