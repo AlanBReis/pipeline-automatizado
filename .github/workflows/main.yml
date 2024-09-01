@@ -20,33 +20,24 @@ jobs:
         python-version: '3.9'
 
     - name: Instalar Dependências
-      run: |
-        pip install -r requirements.txt
-
-    - name: Verificar versão do pytest
-      run: |
-        pytest --version
+      run: pip install -r requirements.txt
 
     - name: Rodar Testes
-      run: |
-        pytest
-
-    - name: Logar no Docker Hub
-      run: |
-        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      run: pytest
 
     - name: Construir Imagem Docker
-      run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/pipeline-automatizado:${{ github.sha }} .
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/pipeline-automatizado:${{ github.sha }} .
+
+    - name: Logar no Docker Hub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
     - name: Push da Imagem Docker
-      run: |
-        docker push ${{ secrets.DOCKER_USERNAME }}/pipeline-automatizado:${{ github.sha }}
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/pipeline-automatizado:${{ github.sha }}
 
     - name: Deploy para AWS
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
+        # Comandos para deploy na AWS usando CLI ou outra ferramenta
         echo "Implementando na AWS..."
-        # Adicione comandos para fazer o deploy na AWS aqui
