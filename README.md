@@ -12,8 +12,8 @@
 - **CI/CD:** GitHub Actions
 - **Containerização:** Docker
 - **Orquestração de Containers:** Docker Compose
-- **Linguagem de Programação:** [Sua Linguagem Aqui] (Ex: Node.js, Python, etc.)
-- **Serviços de Deploy:** [Seu Serviço de Deploy Aqui] (Ex: AWS, Heroku, DigitalOcean)
+- **Linguagem de Programação:**  Python
+- **Serviços de Deploy:** AWS
 
 ## Funcionalidades
 
