@@ -4,6 +4,7 @@
 
 ## Descrição
 
+
 **PipelineAutomatizado** é um projeto que demonstra a implementação de um pipeline de CI/CD completo utilizando GitHub Actions. O pipeline automatiza processos essenciais como checkout de código, instalação de dependências, execução de testes, construção de imagens Docker e deploy automático para um ambiente de produção. Este projeto serve como uma base sólida para práticas de DevOps, promovendo integração contínua e entrega contínua.
 
 ## Tecnologias Utilizadas
